@@ -6,7 +6,6 @@ Created on Thu Jul 11 23:15:37 2024
 @author: gbulb
 """
 
-
 class updated_k_mers_:
     def get_all_possible_4_mers(comb):
         list_of_alternatives=[]
@@ -215,12 +214,12 @@ class updated_k_mers_:
       
 if __name__=="__main__":
     from itertools import combinations_with_replacement  
-    comb = combinations_with_replacement(['A','C','G','T']*4, 4)
+    k=4
+    comb = combinations_with_replacement(['A','C','G','T']*k, k)
     all_alternative_4ways=updated_k_mers_.get_all_possible_4_mers(comb)
     #print(all_alternative_4ways)
     dict_={}
     DNA_string='CTTCGAAAGTTTGGGCCGAGTCTTACAGTCGGTCTTGAAGCAAAGTAACGAACTCCACGGCCCTGACTACCGAACCAGTTGTGAGTACTCAACTGGGTGAGAGTGCAGTCCCTATTGAGTTTCCGAGACTCACCGGGATTTTCGATCCAGCCTCAGTCCAGTCTTGTGGCCAACTCACCAAATGACGTTGGAATATCCCTGTCTAGCTCACGCAGTACTTAGTAAGAGGTCGCTGCAGCGGGGCAAGGAGATCGGAAAATGTGCTCTATATGCGACTAAAGCTCCTAACTTACACGTAGACTTGCCCGTGTTAAAAACTCGGCTCACATGCTGTCTGCGGCTGGCTGTATACAGTATCTACCTAATACCCTTCAGTTCGCCGCACAAAAGCTGGGAGTTACCGCGGAAATCACAG'
     dict_['Rosalind_6431']=DNA_string
-    k=4
     dict_for_counts=updated_k_mers_.updated_k_mers(dict_,k)       
     print(updated_k_mers_.match_all_alternatives_with_frequencies(all_alternative_4ways,dict_for_counts))
